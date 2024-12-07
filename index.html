@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website_Zaid bin mukhailb</title>
+    <style>
+        header {
+            background:  #3581ba;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+        }
+      
+        header ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        header ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background: gray;
+            color: white;
+            padding: 10px 0;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+      
+        .corner-image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 176px; 
+            height: auto; 
+            z-index: 10; 
+        }
+    </style>
+</head>
+<body>
+
+    <img src="ksu_img.gif" alt="Corner Image" class="corner-image">
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('About')">About</a></li>
+                <li><a href="#" onclick="showSection('Projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('My CV')">My CV</a></li>
+                <li><a href="#" onclick="showSection('Contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="About" class="active">
+            <h1>Welcome to My Website</h1>
+            <p>I am Zaid bin mukhailb This is my Project to show my programming skills and display information about me and ways to contact me</p>
+        </section>
+        <section id="Projects">
+            <h1>Projects</h1>
+            <ul style="list-style-type: circle;">
+                <li>In the beginning This project is a simple HTML-based website that highlights my skills in web development 
+                    and design. It features a clean layout, intuitive navigation, and well-organized sections, showcasing
+                     my ability to structure and style web pages effectively. This project serves as a practical example 
+                     of my understanding of front-end development.</li>
+                     <li>
+                        I also worked on creating a database from a beginning as part of Project Database Fundamentals course ISY 202.
+                         The project focused on designing a database for Uber, highlighting the relationships between the company, 
+                         customers, and drivers. It involved developing an efficient structure for data storage and retrieval to
+                          ensure smooth interactions within the system.
+                     </li>
+            </ul>
+        </section>
+        <section id="My CV">
+            <h1>My CV</h1>
+            <p>My name is Zaid Bin Mukhailib, I am a 21 years old student at King Saud University majoring in 
+                Information Systems with a focus on Data Science. I have strong skills in Java programming, 
+                including working with Java Swing libraries, as well as creating and retrieving databases.
+                 Recently, I have also been involved in developing simple projects using HTML. I am passionate 
+                 about expanding my expertise and applying my knowledge to meet the challenges of the job market. </p>
+        </section>
+        <section id="Contact">
+            <h1>Contact Me</h1>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Website Zaid 2024</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+            document.getElementById(sectionId).classList.add("active");
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Form submitted successfully!");
+        });
+    </script>
+</body>
+</html>
